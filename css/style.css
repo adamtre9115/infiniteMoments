@@ -1,0 +1,49 @@
+.navbar,
+navbar-light,
+bg-light {
+    background-color: #07465F;
+    opacity: .95;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #B6C8D1;
+}
+
+#home {
+    background-image: url("../images/cameraPhoto.jpeg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.intro-tag {
+    background: transparent;
+    color: #fff;
+}
+
+
+/****************
+
+about section
+
+****************/
+
+#about {
+    padding-top: 60px;
+}
+
+.about-lead {
+    color: #07465F;
+}
+
+footer {
+    background-color: #07465F;
+    color: #B6C8D1;
+    padding: 20px;
+    font-size: 12px;
+}
+
+footer a {
+    color: #B6C8D1;
+}

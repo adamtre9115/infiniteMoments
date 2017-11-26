@@ -1,3 +1,7 @@
+body {
+    font-family: 'Maven Pro', sans-serif;
+}
+
 .navbar,
 navbar-light,
 bg-light {
@@ -15,6 +19,7 @@ bg-light {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    font-family: 'EB Garamond', serif;
 }
 
 .intro-tag {

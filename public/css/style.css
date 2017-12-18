@@ -1,0 +1,125 @@
+/* DRY CSS */
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#home,
+h2 {
+    font-family: 'Josefin Slab', serif;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.about-lead,
+#contact h2 {
+    color: #07465F;
+}
+
+.intro-tag,
+#about,
+#gallery,
+#contact {
+    padding-top: 70px;
+}
+
+#about,
+#gallery,
+#contact,
+footer {
+    border-top: 5px solid silver;
+}
+
+.navbar,
+navbar-light,
+bg-light {
+    background-color: #07465F;
+    opacity: .95;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #B6C8D1;
+}
+
+#home {
+    background-image: url("../images/cameraPhoto.jpeg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.intro-tag {
+    background: transparent;
+    color: #fff;
+}
+
+
+/****************
+
+about section
+
+****************/
+
+#about {
+    margin-bottom: 40px;
+}
+
+.aboutText {
+    margin-top: 15px;
+}
+
+
+/******************
+    gallery
+
+******************/
+
+#gallery {
+    background-color: #6D9CAD;
+}
+
+#gallery h2 {
+    color: #E4E7EA;
+}
+
+.galleryItem {
+    padding: 5px;
+}
+
+
+/******************
+    contact
+******************/
+
+#contact {
+    padding-bottom: 30px;
+}
+
+.btn {
+    color: #fff;
+    background-color: #07465F
+}
+
+footer {
+    background-color: #07465F;
+    color: #B6C8D1;
+    padding: 20px;
+    font-size: 12px;
+}
+
+footer a {
+    color: #B6C8D1;
+}
+
+
+/* media queries */
+
+@media (max-width: 767px) {}

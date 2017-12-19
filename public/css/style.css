@@ -1,5 +1,9 @@
 /* DRY CSS */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Maven Pro', sans-serif;
 }
@@ -76,6 +80,11 @@ about section
     margin-top: 15px;
 }
 
+.about-img {
+    height: auto;
+    width: auto;
+}
+
 
 /******************
     gallery
@@ -90,8 +99,36 @@ about section
     color: #E4E7EA;
 }
 
-.galleryItem {
+
+/* .galleryItem {
     padding: 5px;
+} */
+
+.item {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-bottom: 5px;
+    border: 2px solid #333;
+}
+
+
+/* .item.thumbnail {
+    width:  100px;
+    height: 100px;
+    background: #cfcfcf
+  } */
+
+.item-med {
+    width: 250px;
+    height: auto;
+    background: #A6E392
+}
+
+.item-lg {
+    width: 300px;
+    height: auto;
+    background: #D092E3
 }
 
 

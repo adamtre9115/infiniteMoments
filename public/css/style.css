@@ -99,36 +99,20 @@ about section
     color: #E4E7EA;
 }
 
+#masonry {
+    margin: 0 auto;
+}
+
 
 /* .galleryItem {
     padding: 5px;
 } */
 
 .item {
-    width: 200px;
-    height: auto;
-    float: left;
-    margin-bottom: 5px;
-    border: 2px solid #333;
-}
-
-
-/* .item.thumbnail {
-    width:  100px;
-    height: 100px;
-    background: #cfcfcf
-  } */
-
-.item-med {
     width: 250px;
     height: auto;
-    background: #A6E392
-}
-
-.item-lg {
-    width: 300px;
-    height: auto;
-    background: #D092E3
+    margin: 5px;
+    border: 2px solid #333;
 }
 
 
@@ -157,6 +141,13 @@ footer a {
 }
 
 
-/* media queries */
+/******************
+    Media Queries
+******************/
 
-@media (max-width: 767px) {}
+@media (max-width: 400px) {
+    /* gallery */
+    img {
+        position: relative;
+    }
+}

@@ -22,6 +22,19 @@ $(document).ready(function () {
     }
     quote();
 
+    // image lightbox
+    var images = ["images/galleryImg1.jpg", "images/galleryImg2.jpg", "images/galleryImg3.jpg", "images/galleryImg4.jpg", "images/galleryImg5.jpg", "images/galleryImg6.jpg", "images/galleryImg7.jpg", "images/galleryImg8.jpg", "images/galleryImg9.jpg"];
+
+    $(".item").on("click", function () {
+        var imgSrc = $(this).attr("src");
+        var caption = $(this).attr("alt");
+
+        $(".modal-title").text(caption);
+        $(".modalImg").attr("src", imgSrc);
+
+        $("#exampleModal").modal("show");
+    })
+
     // capture email inputs
     $("#sendMsg").on("click", function (e) {
         e.preventDefault();

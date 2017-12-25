@@ -48,6 +48,10 @@ bg-light {
     opacity: .95;
 }
 
+.nav-link {
+    font-size: 16px;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: #B6C8D1;
 }
@@ -108,21 +112,11 @@ about section
     margin: 0 auto;
 }
 
-
-/* .galleryItem {
-    padding: 5px;
-} */
-
 .item {
     width: 250px;
     height: auto;
     margin: 5px;
     /* border: 2px solid #333; */
-}
-
-.modalImg {
-    height: 80%;
-    width: 80%;
 }
 
 

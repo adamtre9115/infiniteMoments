@@ -14,6 +14,8 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Maven+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/lightbox.css">
     <!-- personal styling -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -114,47 +116,46 @@
             <h2>Gallery</h2>
             <div id="masonry">
 
-                <img class="img-fluid rounded item" src="images/galleryImg1.jpg" alt="Client Graduation Portrait">
+                <div class="galleryItem">
+                    <a href="images/galleryImg1.jpg" data-lightbox="portfolio">
+                        <img class="img-fluid rounded item" src="images/galleryImg1.jpg" data-lightbox="portfolio" alt="Client Graduation Portrait">
+                    </a>
+                </div>
 
-                <img class="img-fluid rounded item" src="images/galleryImg2.jpg" alt="Outdoor Photo of Client">
+                <a href="images/galleryImg2.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg2.jpg" data-lightbox="portfolio" alt="Outdoor Photo of Client">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg3.jpg" alt="Outdoor Photo of Client">
+                <a href="images/galleryImg3.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg3.jpg" data-lightbox="portfolio" alt="Outdoor Photo of Client">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg4.jpg" alt="Photo of Daughter">
-                
-                <img class="img-fluid rounded item" src="images/galleryImg5.jpg" alt="Night photo of couple">
+                <a href="images/galleryImg4.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg4.jpg" data-lightbox="portfolio" alt="Photo of Daughter">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg6.jpg" alt="Day photo of couple">
+                <a href="images/galleryImg5.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg5.jpg" data-lightbox="portfolio" alt="Night photo of couple">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg7.jpg" alt="Client Graduation Portrait">
+                <a href="images/galleryImg6.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg6.jpg" data-lightbox="portfolio" alt="Day photo of couple">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg8.jpg" alt="Client Graduation Portrait">
+                <a href="images/galleryImg7.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg7.jpg" data-lightbox="portfolio" alt="Client Graduation Portrait">
+                </a>
 
-                <img class="img-fluid rounded item" src="images/galleryImg9.jpg" alt="Client Graduation Portrait">
+                <a href="images/galleryImg8.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg8.jpg" data-lightbox="portfolio" alt="Client Graduation Portrait">
+                </a>
 
-
+                <a href="images/galleryImg9.jpg" data-lightbox="portfolio">
+                    <img class="img-fluid rounded item" src="images/galleryImg9.jpg" data-lightbox="portfolio" alt="Client Graduation Portrait">
+                </a>
             </div>
         </div>
 
-        <!-- modal for photos -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img class="img-fluid modalImg" src="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-            </div>
     </section>
     <!-- end gallery -->
     <!-- begin contact -->
@@ -165,18 +166,30 @@
             <!-- begin form -->
             <form method="POST" action="/message">
                 <div class="form-row">
+
+                     <div class="form-group col-md-12 text-center">
+                        <label for="session">Session Type</label>
+                        <select class="custom-select" required>
+                            <option value="family portrait">Family Portrait</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="senior portraits">Senior Portraits</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
                     <div class="form-group col-md-4">
                         <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Your Name">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputPhone">Phone</label>
-                        <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="555-555-5555">
+                        <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="555-555-5555" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="your-email@email.com">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="your-email@email.com" required>
                     </div>
+
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -208,6 +221,7 @@
     <script src="js/smoothScroll.js "></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/masonrySet.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="js/app.js "></script>
 
 </body>

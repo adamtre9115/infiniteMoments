@@ -144,6 +144,11 @@ footer a {
     color: #B6C8D1;
 }
 
+footer a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
 
 /******************
     Media Queries

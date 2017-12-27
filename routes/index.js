@@ -41,8 +41,8 @@ router.post('/message', function (req, res) {
         // setup email data with unicode symbols
         let mailOptions = {
             from: '"Node Server 👻" <enter admin email here>', // sender address
-            to: 'who is this going to', // list of receivers
-            subject: 'New Contact Request', // Subject line
+            to: 'infinitemomentphotos@hotmail.com', // list of receivers
+            subject: 'New Contact Request from IMP', // Subject line
             text: 'Hello world?', // plain text body
             html: output // html body
         };

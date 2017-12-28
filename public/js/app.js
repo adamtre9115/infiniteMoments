@@ -37,6 +37,12 @@ $(document).ready(function () {
 
         //console.log(emailData);
         $.post("/message", emailData, function () {});
+
+        // clear contents
+
+        $("#inputName").val("");
+        $("#inputEmail").val("");
+        $("#message").val("");
     })
 
     // lightbox options

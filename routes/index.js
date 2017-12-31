@@ -9,6 +9,8 @@ router.get('/', function (req, res, next) {
 router.post('/message', function (req, res) {
     let name = req.body.name;
     let email = req.body.email;
+    let phone = req.body.phone;
+    let session = req.body.session;
     let message = req.body.message;
     const output = `
         <p>You have a new contact request</p>
@@ -16,8 +18,9 @@ router.post('/message', function (req, res) {
 
         <ul>
             <li> Name: ${req.body.name}</li>
-            <li> Phone: ${req.body.phone}</li>
             <li> Email: ${req.body.email}</li>
+            <li> Phone: ${req.body.phone}</li>
+            <li> Session Type: ${req.body.session}</li>
         </ul>
 
         <h3>Message</h3>
@@ -28,20 +31,19 @@ router.post('/message', function (req, res) {
 
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
-            host: 'infiniteMoments',
+            host: 'smtp.gmail.com',
             port: 465,
-            secure: true, // true for 465, false for other ports
+            secure: true,
             auth: {
-                user: 'enter admin email here', // generated ethereal user
-                pass: 'enter password here' // generated ethereal password
+                user: 'infinitemomentphotos252@gmail.com',
+                pass: 'paglskcjlqqmzjywW'
             },
-            rejectUnauthorized: false
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"Node Server 👻" <enter admin email here>', // sender address
-            to: 'infinitemomentphotos@hotmail.com', // list of receivers
+            from: 'infinitemomentphotos252@gmail.com', // sender address
+            to: 'treadam9115@gmail.com', // list of receivers
             subject: 'New Contact Request from IMP', // Subject line
             text: 'Hello world?', // plain text body
             html: output // html body

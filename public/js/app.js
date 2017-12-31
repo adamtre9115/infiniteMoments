@@ -27,11 +27,16 @@ $(document).ready(function () {
         e.preventDefault();
         var name = $("#inputName").val().trim();
         var email = $("#inputEmail").val().trim();
+        var phone = $("#inputPhone").val().trim();
+        var session = $("#session").val().trim();
         var message = $("#message").val().trim();
+
 
         var emailData = {
             name: name,
             email: email,
+            phone: phone,
+            session: session,
             message: message
         }
 
@@ -42,6 +47,7 @@ $(document).ready(function () {
 
         $("#inputName").val("");
         $("#inputEmail").val("");
+        $("#inputPhone").val("");
         $("#message").val("");
     })
 

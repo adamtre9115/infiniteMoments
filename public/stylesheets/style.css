@@ -1,0 +1,269 @@
+html {
+  font-size: 100%;
+}
+
+/* body {
+  //-webkit-text-stroke-width: .05px;
+  //-webkit-text-stroke-color: white;
+  -webkit-font-smoothing: antialiased;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 35px;
+  font-weight: 400;
+  letter-spacing: 0.45;
+  color: #516677;
+} */
+
+body {
+  line-height: 22px;
+  letter-spacing: 0.45;
+}
+
+/* navbar  */
+.navbar,
+navbar-light,
+bg-light {
+  background-color: #07465f;
+  opacity: 0.85;
+  padding: 0px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid #fff;
+}
+a.navbar-brand {
+  margin-left: 15px;
+}
+
+button.navbar-toggler {
+  margin-right: 15px;
+}
+
+#home,
+#about,
+#gallery,
+#contact {
+  padding-top: 70px;
+}
+
+#home {
+  height: 100vh;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  color: #fff;
+  background: url("../images/infLg.jpg") center center;
+  background-size: cover;
+}
+
+#home h1 {
+  margin-top: 50px;
+}
+
+#enter {
+  /* margin: 0 auto; */
+  margin-top: 80px;
+}
+
+.enterBtn {
+  text-decoration: none;
+  border: solid 1px #fff;
+  padding: 10px 30px;
+  color: #fff;
+}
+
+.enterBtn:hover {
+  color: #07465f;
+  background: #fff;
+  border-color: #07465f;
+  text-decoration: none;
+  transition: 0.5s;
+}
+/* about section */
+.about-imp {
+  margin-top: 5px;
+}
+
+#about p {
+  font-size: 14px;
+}
+.item {
+  width: 250px;
+  height: auto;
+  margin: 5px;
+}
+/* gallery */
+#gallery {
+  background-color: #f5f6fa;
+  padding-bottom: 10px;
+  min-width: 100%;
+}
+
+#masonry {
+  margin: 0 auto;
+}
+
+/* bar split */
+
+.split {
+  height: auto;
+  background-color: silver;
+  border-top: 2px solid #07465f;
+  border-bottom: 2px solid #07465f;
+}
+
+split p {
+  font-size: 15px;
+}
+.blockquote {
+  font-size: 1.3rem;
+}
+.blockquote p {
+  font-size: 15px;
+}
+
+.quote {
+  padding: 15px;
+  color: #f5f6fa;
+}
+/* contact */
+#submit {
+  margin-top: 10px;
+  background-color: #07465f;
+  border: none;
+  border-radius: 0;
+}
+
+#submit:hover {
+  background-color: silver;
+  color: #07465f;
+}
+.form-control {
+  border-radius: 0;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #07465f;
+}
+.sendOff p {
+  font-style: italic;
+}
+
+/* footer */
+#footer {
+  padding: 20px;
+  border-top: solid 2px silver;
+  background-color: #07465f;
+  color: #fff;
+}
+
+#footer span {
+  font-size: 14px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  color: silver;
+}
+#loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(192, 192, 192, 0.5); */
+  background-color: #2b2c2f;
+  background-image: url("../images/infinity.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+
+#content {
+  /* opacity: 0; */
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+#backtop {
+  position: fixed;
+  left: auto;
+  right: 20px;
+  top: auto;
+  bottom: 20px;
+  outline: none;
+  overflow: hidden;
+  color: silver;
+  text-align: center;
+  opacity: .85;
+  background-color: #07465f;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 2px solid silver;
+  cursor: pointer;
+  transition: all .3s linear;
+  z-index: 999999;
+}
+/* media queries */
+@media (max-width: 414px) {
+  /* home */
+  #home {
+    background: url("../images/infSm.jpg") center center;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+
+  .sendOff {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  /* home */
+  #home {
+    background: url("../images/infMd.jpg") center center;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  /* home */
+  #home {
+    background: url("../images/infMdW.jpg") center center;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* home */
+  #home {
+    background: url("../images/infMdHW.jpg") center center;
+    height: 95vh;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* home */
+
+  #home {
+    background: url("../images/infLg.jpg") center center;
+  }
+}

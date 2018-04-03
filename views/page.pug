@@ -1,0 +1,124 @@
+//- Create template views/page.pug
+extends ./layout.pug
+
+//- Create a block
+block bodyContent
+    div#loading
+    div#content
+        header#home
+            <!-- begin nav -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <!-- begin nav container -->
+                <div class="container">
+                    <a class="navbar-brand" href="#home">
+                        <img class=" rounded" height="50" width="80" src="images/infiniteNav.png" alt="Logo of Infinite Moments Photography">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end nav container -->
+            </nav>
+            <! -- end nav -->
+                div.main.text-center
+                        != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)
+                div#enter.text-center
+                    a(href="#about" class="enterBtn") Enter
+                    
+        //- begin about section
+        section#about(data-aos="fade-up-right" data-aos-duration="600" data-aos-easing="ease-in-sine")      
+                div.whoWe.text-center
+                    != PrismicDOM.RichText.asHtml(document.data.about_header, ctx.linkResolver)
+
+                div.container
+                    div.row
+                        div.about-img.text-center.col-md-6
+                            img(class="img-fluid rounded", src=document.data.maine_photo.url)
+                        div.about-imp.col-md-6
+                            != PrismicDOM.RichText.asHtml(document.data.about_paragraph, ctx.linkResolver)
+        section.split
+            div.container.quote
+                h2 Moments, Lasting
+                blockquote.blockquote
+                    p.mb-0 Taking an image, freezing a moment, reveals how rich reality truly is.
+        
+        //- begin photo gallery
+        section#gallery(data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in-sine")
+            div.photo-gallery.container
+                for slice in document.data.body
+                    case slice.slice_type
+                        when "text"
+                            != PrismicDOM.RichText.asHtml(slice.primary.rich_text, ctx.linkResolver)
+                        when "image_gallery"
+                            h2.gallery-title.text-center
+                                != PrismicDOM.RichText.asText(slice.primary.name_of_the_gallery)
+                            div#masonry
+                                for image in slice.items
+                                    a(href=image.gallery_image.url, data-lightbox="portfolio")
+                                        img(class="img-fluid rounded item", src=image.gallery_image.url alt=image.image_captions)
+                                    
+        section.split
+            div.container.quote
+                h2 Live, True
+                blockquote.blockquote
+                    p.mb-0 It’s one thing to make a picture of what a person looks like, it’s another thing to make a portrait of who they are.
+
+        //- begin contact section
+        section#contact(data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-sine" data-aos-offset="150")
+            div.container
+                h1.text-center Contact Us
+                div.row
+                    form.col-md-6
+                        div.form-group
+                            label(for="name") Name
+                            input(type="text" id="name" placeholder="Your Name" class="form-control" required)
+                            
+                            label(for="email") Email
+                            input(type="email" id="email" placeholder="Your Email" class="form-control" required)
+
+                            label(for="session") Session Type
+                            select(name="session" class="form-control" id="session")
+                                option(value="graduation") Graduation
+                                option(value="family portraits") Family Portraits
+                                option(value="individual session") Individual Session
+                                option(value="maternity") Maternity
+                            
+                            label(for="comments") Comments
+                            textarea(name="comments", cols="30", rows="5" class="form-control" id="comments")
+
+                            button(type="submit" class="btn btn-primary" id="submit") Submit
+
+                    div.col-md-6.text-center.sendOff
+                        img(src="../images/nightCamera.jpg", alt="Photo of camera" class="rounded")
+                        p Moments can last forever.
+        div#backtop(data-v-w="300, 800") &#9650;
+        footer#footer.text-center
+            span.footer
+            span Infinte Moments Photography | Site created by <a href="https://treseanadam.com" target="_blank"> Tresean Adam</a>  
+    script(src="/javascript/masonry.pkgd.min.js")
+    script(src="/javascript/masonrySet.js")
+    script(src="/javascript/aos.js")
+    script.
+        $(window).on('load', function () {
+            //- initialize AOS on load
+           AOS.init();
+            //- then after 2s refresh to compensate for content load
+           setTimeout(function(){AOS.refresh()},2000)
+        });

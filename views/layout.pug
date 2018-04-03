@@ -1,0 +1,36 @@
+doctype html(lang='en')
+
+head
+    title Infinite Moments Photography
+    link(rel="shortcut icon", href="../images/favicon.png")
+    link(rel="stylesheet", href="/stylesheets/reset.css")
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/lightbox.css")
+    link(rel="stylesheet", href="/stylesheets/aos.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/stylesheets/vendors/help.min.css")
+    link(href=href="https://fonts.googleapis.com/css?family=Noto+Serif|Open+Sans", rel="stylesheet", type="text/css")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Required for Previews and Experiments
+    script(type="application/ld+json").
+          {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "https://www.infinitemomentphotos.com"
+        }
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+    script
+      = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script(src="/javascript/loading.js")
+    script(src="/javascript/smoothscroll.js")
+    script(src="/javascript/float-panel.js")
+    script(src="/javascript/imagesLoaded.min.js")
+    script(src="/javascript/lightbox.js")
+    script(src="/javascript/scripts.js")
+    script(src="//static.cdn.prismic.io/prismic.min.js")
+    script(src="/javascript/vendors/highlight.min.js")
+
+body
+    block bodyContent

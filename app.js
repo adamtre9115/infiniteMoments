@@ -46,14 +46,36 @@ app.get('/', (req,res) =>{
    // We are using the function to get a document by its uid field
    req.prismic.api.getByUID('home', uid)
    .then((document) => {
-
+     
        // document is a document object, or null if there is no match
        if (document) {
 
            // Render the 'page' pug template file (page.pug)
            res.render('page', { document });
-          // console.log(document.data.body)
+          
+        } else {
+            res.status(404).send('404 not found');
+        }
+    })
+    .catch((error) => {
+        next(`error when retriving page ${error.message}`);
+    });
+})
 
+app.get('/wedding', (req,res) =>{
+  const uid = process.env.UID;
+  
+   // We are using the function to get a document by its uid field
+   req.prismic.api.getByUID('wedding_gallery', 'wedding')
+   .then((document) => {
+     
+       // document is a document object, or null if there is no match
+       if (document) {
+
+           // Render the 'page' pug template file (page.pug)
+           console.log(document.data.body[0])
+           res.render('wedding', { document });
+          
         } else {
             res.status(404).send('404 not found');
         }

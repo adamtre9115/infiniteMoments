@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 html {
   font-size: 100%;
 }
@@ -17,24 +18,34 @@ html {
 body {
   line-height: 22px;
   letter-spacing: 0.45;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* navbar  */
 .navbar,
 navbar-light,
 bg-light {
-  background-color: #07465f;
+  background-color: transparent;
   opacity: 0.85;
   padding: 0px;
+}
+.navbar-collapse {
+  justify-content: center;
 }
 
 .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
 
+.nav-item:hover,
+.nav-link:hover {
+  color: #fff;
+}
+
 .nav-link:hover {
   border-bottom: 1px solid #fff;
 }
+
 a.navbar-brand {
   margin-left: 15px;
 }
@@ -52,15 +63,16 @@ button.navbar-toggler {
 
 #home {
   height: 100vh;
-  font-family: "Noto Serif", serif;
-  font-style: italic;
+  /* font-family: "Noto Serif", serif; */
+  /* font-style: italic; */
   color: #fff;
-  background: url("../images/infLg.jpg") center center;
+  background: url("../images/brideLg.jpeg") center center;
   background-size: cover;
 }
 
-#home h1 {
+#home .main {
   margin-top: 50px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #enter {
@@ -82,24 +94,52 @@ button.navbar-toggler {
   text-decoration: none;
   transition: 0.5s;
 }
-/* about section */
-.about-imp {
-  margin-top: 5px;
+
+/*  portfolio section */
+
+#about {
+  margin-bottom: 80px;
 }
 
-#about p {
-  font-size: 14px;
+.portfolioQuote {
+  margin-bottom: 30px;
 }
-.item {
+
+.portfolioImg {
+  /* width: 90%; */
+  /* max-width: 400px; */
+  margin: auto;
+  overflow: hidden;
+
+  height: 300px;
+  margin-bottom: 20px;
+  transform: scale(1);
+  transition: .5s;
+}
+
+.portfolioImg:hover {
+  transform: scale(.9);
+  transition: .5s;
+}
+
+.portfolioImg img {
+  height: 100%;
   width: 250px;
-  height: auto;
-  margin: 5px;
+  /* width: 100%; */
 }
+
+
 /* gallery */
 #gallery {
   background-color: #f5f6fa;
   padding-bottom: 10px;
   min-width: 100%;
+}
+
+.item {
+  width: 250px;
+  height: auto;
+  margin: 5px;
 }
 
 #masonry {
@@ -226,7 +266,10 @@ split p {
 @media (max-width: 414px) {
   /* home */
   #home {
-    background: url("../images/infSm.jpg") center center;
+    background: url("../images/brideSm.jpg");
+  }
+  .navbar-collapse{
+    background-color: #07465f;
   }
 
   .nav-link {
@@ -241,7 +284,7 @@ split p {
 @media (min-width: 768px) {
   /* home */
   #home {
-    background: url("../images/infMd.jpg") center center;
+    background: url("../images/brideMdh.jpg") center center;
   }
 }
 
@@ -264,6 +307,6 @@ split p {
   /* home */
 
   #home {
-    background: url("../images/infLg.jpg") center center;
+    background: url("../images/Webp.net-resizeimage\ \(1\).jpg") center center;
   }
 }

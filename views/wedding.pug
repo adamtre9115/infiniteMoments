@@ -1,0 +1,66 @@
+//- Create template views/page.pug
+extends ./layout.pug
+
+block bodyContent
+    div#content
+        header#wedding
+            <!-- begin nav -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <!-- begin nav container -->
+                <div class="container">
+                    <a class="navbar-brand" href="#home">
+                        <img class=" rounded" height="50" width="80" src="images/infiniteNav2.png" alt="Logo of Infinite Moments Photography">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end nav container -->
+            </nav>
+            <! -- end nav -->
+
+        div.main.text-center
+            h1 Wedding Gallery
+            h3 "true love is never blind, but rather brings an added light."
+                //- begin photo gallery
+        section#gallery
+            div.photo-gallery.container
+                for slice in document.data.body
+                    case slice.slice_type
+                        when "text"
+                            != PrismicDOM.RichText.asHtml(slice.primary.rich_text, ctx.linkResolver)
+                        when "image_gallery"
+                            //- h2.gallery-title.text-center
+                            //-     != PrismicDOM.RichText.asText(slice.primary.wedding)
+                            div#masonry
+                                for image in slice.items
+                                    a(href=image.gallery_image.url, data-lightbox="portfolio")
+                                        img(class="img-fluid rounded item", src=image.gallery_image.url alt=image.image_captions[0].text)
+
+    script(src="/javascript/masonry.pkgd.min.js")
+    script(src="/javascript/masonrySet.js")
+    script(src="/javascript/aos.js")
+    script.
+        $(window).on('load', function () {
+            //- initialize AOS on load
+           AOS.init();
+            //- then after 2s refresh to compensate for content load
+           setTimeout(function(){AOS.refresh()},2000)
+        });
